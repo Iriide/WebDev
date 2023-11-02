@@ -1,0 +1,127 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Zadanie 8</title>
+    <style>
+        .body {
+            background-color: rgb(247, 255, 240);
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(96, 247, 82);
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        a {
+            color: rgb(96, 247, 82);
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        .grid-container {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        .text {
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            padding: 50px;
+            color: rgb(148, 147, 147);
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            width: 50%;
+            height: 600px;
+            visibility: visible;
+        }
+
+
+        .image-container img {
+            position: absolute;
+            padding: 10px;
+            width: 400px;
+            height: 300px;
+        }
+
+        .image-container>img:nth-child(1) {
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .image-container>img:nth-child(2) {
+            top: 200px;
+            left: 180px;
+            z-index: 0;
+
+        }
+
+        .image-container>img:nth-child(3) {
+            top: 50px;
+            left: 350px;
+            z-index: 0;
+        }
+
+        .image-container>img:hover {
+            z-index: 1;
+            border: 10px solid rgb(96, 247, 82);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 1500px) {
+            .grid-container {
+                display: flex;
+                justify-content: center;
+                align-content: flex-start;
+                flex-direction: column;
+            }
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                color: rgb(148, 147, 147);
+            }
+
+            .image-container {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>EKSCYTUJĄCE MIEJSCA</h1>
+    <div class="grid-container">
+        <div class="text">
+            <h3>Tekst 1</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore nam incidunt nemo molestiae explicabo
+                similique aspernatur rerum at pariatur necessitatibus!</p>
+            <h3>Tekst 2</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ad officia obcaecati veniam, nulla nihil
+                voluptate corporis quaerat blanditiis soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quidem consectetur ex debitis laudantium repudiandae illo.</p>
+            <a href="#">Więcej</a>
+        </div>
+        <div class="image-container">
+            <img src="img/nat-1-large.jpg">
+            <img src="img/nat-2-large.jpg">
+            <img src="img/nat-3-large.jpg">
+        </div>
+
+    </div>
+
+</body>
+
+</html>

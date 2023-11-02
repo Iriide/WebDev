@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Alignment: aligning individual items on the cross axis</title>
+    <link rel="stylesheet" href="style2.css">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 500px;
+            /* Przykładowa szerokość kontenera */
+        }
+        .another-container {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            /* Przykładowa szerokość kontenera */
+        }
+
+
+        .box {
+            width: 100%;
+            height: 60px;
+            margin: 10px;
+            border: 2px solid black;
+        }
+
+        .red-box {
+            background-color: red;
+            width: 33%;
+        }
+
+        .blue-box {
+            background-color: lightblue;
+        }
+
+        .yellow-box {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="another-container">
+            <div class="box red-box"></div>
+            <div class="box blue-box"></div>
+        </div>
+        <div class="another-container">
+            <div class="box red-box"></div>
+            <div class="box blue-box"></div>
+        </div>
+        <div class="box yellow-box"></div>
+
+    </div>
+
+</body>
+
+
+</html>

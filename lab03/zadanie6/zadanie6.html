@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Alignment: aligning individual items on the cross axis</title>
+    <link rel="stylesheet" href="style2.css">
+
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 300px auto;
+            
+        }
+        .notifications{
+            border-radius: 5px;
+            border: 2px solid rgb(12, 12, 95);
+            height: 20px;
+            padding-left: 0.1rem;
+            padding-right: 0.1rem;
+            align-self: center;
+            margin-right: 1rem;
+            margin-left: 0.5rem;
+            visibility: visible;
+        }
+
+        .menu {
+            display: grid;
+            grid-column: 1;
+            margin: 5px;
+            min-width: 50px;
+            max-width: 260px;
+            overflow: hidden;
+        }
+        .menu>ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            min-width: 50px;
+        }
+        .menu>ul:hover{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            background-color: rgb(96, 190, 245);
+            border-radius: 8px;
+        }
+        .menu>ul>h4{
+            padding-left: 0.1rem;
+            padding-right: 0.1rem;
+            color: rgb(12, 12, 95);
+            visibility: visible;
+            transition: visibility 0s, opacity 0.5s, linear;
+            display: flex;
+            text-wrap: nowrap;
+        }
+        .content{
+            grid-column: 2;
+            display: flex;
+            justify-self: flex-end;
+            justify-content: center;
+            align-content: center;
+            justify-self: flex-end;
+            border: 10px solid gray;
+            margin: 10px;
+            width: 100%;
+        }
+        @media (max-width: 1600px){
+            .menu{
+                width: 100px;
+            }
+            .menu>ul>h4{
+                transition: visibility 0s, opacity 0.5s, linear;
+                visibility: hidden;
+                opacity: 0;
+                width: 0px
+            }
+            .notifications{
+                transition: visibility 0s, opacity 0.5s, linear;
+                visibility: hidden;
+                opacity: 0;
+                width: 0px;
+            }
+            .container {
+            display: grid;
+            grid-template-columns: 150px auto;
+        }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <li class="menu">
+            <ul>
+                <img src="icons/home-1.svg">
+                <h4>DASHBOARD</h4>
+            </ul>
+            <ul>
+                <img src="icons/prescription.svg">
+                <h4>E-PERSCRIPTIONS</h4>
+                <div class="notifications">16</div>
+            </ul>
+            <ul>
+                <img src="icons/user.svg">
+                <h4>MY PATIENTS</h4>
+            </ul>
+            <ul>
+                <img src="icons/send.svg">
+                <h4>INVITE</h4>
+            </ul>
+            <ul>
+                <img src="icons/user.svg">
+                <h4>MY PRIFILE</h4>
+            </ul>
+            <ul>
+                <img src="icons/settings.svg">
+                <h4>SETTINGS</h4>
+            </ul>
+
+        </li>
+        <div class="content">
+            <p>Future content</p>
+        </div>
+
+
+
+    </section>
+
+</body>
+
+
+</html>

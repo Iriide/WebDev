@@ -1,0 +1,17 @@
+h1{
+    color: rgb(47, 99, 105);
+    font-family: 'Times New Roman', Times, serif;
+    border: 1px dashed rgb(47, 99, 105);
+}
+.figure{
+    height: 300px;
+    width: 300px;
+    font-size: small;
+    align-items: center;
+    text-align: center;
+    float: left;
+}
+img{
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    border: 5px solid white;
+}

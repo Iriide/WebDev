@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Alignment: aligning individual items on the cross axis</title>
+    <link rel="stylesheet" href="style2.css">
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-gap: 10px;
+            background-color: #ffffff;
+
+        }
+
+        .box {
+            background-color: rgba(255, 115, 0, 0.308);
+            border: 2px solid rgba(255, 115, 0);
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .one {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row: 1;
+        }
+
+        .two {
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+        .three{
+            grid-column: 1;
+            grid-row-start: 2;
+            grid-row-end: 5;
+        }
+        .four{
+            grid-column: 3;
+            grid-row: 3;
+        }
+        .five{
+            grid-column: 2;
+            grid-row: 4;
+        }
+        .six{
+            grid-column: 3;
+            grid-row: 4;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="box one">Jeden</div>
+        <div class="box two">Dwa</div>
+        <div class="box three">Trzy</div>
+        <div class="box four">Cztery</div>
+        <div class="box five">Pięć</div>
+        <div class="box six">Sześć</div>
+    </div>
+
+</body>
+
+
+</html>

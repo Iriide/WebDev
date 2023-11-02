@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsywny szablon z użyciem grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100vh;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 15% 60% 15%;
+            grid-template-rows: 10vh 10vh auto 10vh;
+            grid-template-areas:
+                "head head head"
+                "aside nav ads"
+                "aside main ads"
+                "foot foot foot";
+            height: auto;
+            gap: 10px;
+            margin: 10px;
+        }
+
+        .header {
+            outline: 2px solid rgb(233, 190, 2);
+            grid-area: head;
+        }
+
+        .navigation {
+            outline: 2px solid rgb(233, 190, 2);
+            grid-area: nav;
+        }
+
+        .content {
+            outline: 2px solid rgb(233, 190, 2);
+            grid-area: main;
+            background-image: url("greg-cox-pres-zbrush.jpg");
+            background-repeat: repeat;
+        }
+
+        .post {
+            position: relative;
+            padding: 50px;
+            z-index: 1;
+        }
+
+        .post-back {
+            position: absolute;
+            left: -20px;
+            top: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            transform: skew(-15deg) translate(6%, 0);
+            width: 92%;
+            height: 90%;
+            z-index: -1;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .avatar-post {
+            float: left;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .post-content {
+            flex: 1;
+        }
+
+        .post-title {
+            font-weight: bold;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        .post-text {
+            margin: 0;
+        }
+
+        .sidebar {
+            background-color: white;
+            outline: 2px solid rgb(233, 190, 2);
+            grid-area: aside;
+            position: sticky;
+            height: 60vh;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: grey;
+            margin-bottom: 10px;
+        }
+
+        .social-icons a {
+            margin: 0 5px;
+        }
+
+        .ads {
+            outline: 2px solid rgb(233, 190, 2);
+            grid-area: ads;
+        }
+
+
+        .footer {
+            outline: 2px solid rgb(233, 190, 2);
+            grid-area: foot;
+        }
+
+        .reservation-form-container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-section {
+            margin-top: 20px;
+            width: 40%;
+            flex: 1;
+            padding: 50px;
+        }
+
+        .image-section {
+            position: relative;
+            width: 70%;
+            background: url("free-photo-of-park-narodowy-teide-teneryfa.jpeg");
+            background-size: cover;
+            -webkit-box-shadow: 0px 0px 24px 0px rgba(66, 68, 90, 1);
+            -moz-box-shadow: 0px 0px 24px 0px rgba(66, 68, 90, 1);
+            box-shadow: 0px 0px 24px 0px rgba(66, 68, 90, 1);
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .radio-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .submit-btn {
+            background-color: rgb(233, 190, 2);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-cut {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 65%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            margin: 0 0 0 -80px;
+            -webkit-transform: skew(-20deg);
+            -moz-transform: skew(-20deg);
+            -o-transform: skew(-20deg);
+            transform: skew(-20deg);
+            z-index: -1;
+        }
+
+        .submit-btn:hover {
+            background-color: white;
+            color: rgb(233, 190, 2);
+        }
+
+        /* Responsywność dla tabletów */
+        @media (max-width: 1000px) {
+            .container {
+                grid-template-columns: 25% 50% 25%;
+                grid-template-areas:
+                    "head head "
+                    "nav nav "
+                    "aside main "
+                    "ads foot ";
+            }
+        }
+
+        /* Responsywność dla telefonów komórkowych */
+        @media (max-width: 800px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto auto auto auto;
+                grid-template-areas:
+                    "head"
+                    "nav"
+                    "aside"
+                    "main"
+                    "ads"
+                    "foot";
+            }
+
+            .sidebar {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="navigation">Navigation</div>
+        <div class="content">
+            <div class="post">
+                <div class="post-back"></div>
+                <div class="post-content"> <img src="free-photo-of-park-narodowy-teide-teneryfa.jpeg" alt="Avatar"
+                        class="avatar-post">
+
+                    <h2 class="post-title">PRZYKŁADOWY NAGŁÓWEK 1</h2>
+                    <p class="post-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A nemo fugiat natus
+                        ad impedit sapiente architecto necessitatibus, deleniti vel ducimus explicabo voluptates nobis
+                        illo incidunt reiciendis, ipsa iste adipisci rem ullam distinctio. Illum nemo, eaque sequi est
+                        id nostrum ipsum illo harum vel soluta, a ad, laborum fugiat? Voluptate, incidunt!Lorem ipsum
+                        dolor sit, amet consectetur adipisicing elit. Quisquam illum provident ea rem sit impedit neque,
+                        commodi perspiciatis laudantium! Esse, tempora. Nemo itaque cum inventore eius maiores
+                        architecto pariatur et?Lorem ipsum dolor sit amet consectetur adipiscing elit. Aperiam, ipsum...
+                    </p>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-back"></div>
+
+                <div class="post-content"><img src="free-photo-of-park-narodowy-teide-teneryfa.jpeg" alt="Avatar"
+                        class="avatar-post">
+                    <h2 class="post-title">PRZYKŁADOWY NAGŁÓWEK 1</h2>
+                    <p class="post-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A nemo fugiat natus
+                        ad impedit sapiente architecto necessitatibus, deleniti vel ducimus explicabo voluptates nobis
+                        illo incidunt reiciendis, ipsa iste adipisci rem ullam distinctio. Illum nemo, eaque sequi est
+                        id nostrum ipsum illo harum vel soluta, a ad, laborum fugiat? Voluptate, incidunt!Lorem ipsum
+                        dolor sit, amet consectetur adipisicing elit. Quisquam illum provident ea rem sit impedit neque,
+                        commodi perspiciatis laudantium! Esse, tempora. Nemo itaque cum inventore eius maiores
+                        architecto pariatur et?Lorem ipsum dolor sit amet consectetur adipiscing elit. Aperiam, ipsum...
+                    </p>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-content"> <img src="free-photo-of-park-narodowy-teide-teneryfa.jpeg" alt="Avatar"
+                        class="avatar-post">
+                    <div class="post-back"></div>
+
+                    <h2 class="post-title">PRZYKŁADOWY NAGŁÓWEK 1</h2>
+                    <p class="post-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A nemo fugiat natus
+                        ad impedit sapiente architecto necessitatibus, deleniti vel ducimus explicabo voluptates nobis
+                        illo incidunt reiciendis, ipsa iste adipisci rem ullam distinctio. Illum nemo, eaque sequi est
+                        id nostrum ipsum illo harum vel soluta, a ad, laborum fugiat? Voluptate, incidunt!Lorem ipsum
+                        dolor sit, amet consectetur adipisicing elit. Quisquam illum provident ea rem sit impedit neque,
+                        commodi perspiciatis laudantium! Esse, tempora. Nemo itaque cum inventore eius maiores
+                        architecto pariatur et?Lorem ipsum dolor sit amet consectetur adipiscing elit. Aperiam, ipsum...
+                    </p>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-content"> <img src="free-photo-of-park-narodowy-teide-teneryfa.jpeg" alt="Avatar"
+                        class="avatar-post">
+                    <div class="post-back"></div>
+
+                    <h2 class="post-title">PRZYKŁADOWY NAGŁÓWEK 1</h2>
+                    <p class="post-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A nemo fugiat natus
+                        ad impedit sapiente architecto necessitatibus, deleniti vel ducimus explicabo voluptates nobis
+                        illo incidunt reiciendis, ipsa iste adipisci rem ullam distinctio. Illum nemo, eaque sequi est
+                        id nostrum ipsum illo harum vel soluta, a ad, laborum fugiat? Voluptate, incidunt!Lorem ipsum
+                        dolor sit, amet consectetur adipisicing elit. Quisquam illum provident ea rem sit impedit neque,
+                        commodi perspiciatis laudantium! Esse, tempora. Nemo itaque cum inventore eius maiores
+                        architecto pariatur et?Lorem ipsum dolor sit amet consectetur adipiscing elit. Aperiam, ipsum...
+                    </p>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-back"></div>
+                <div class="post-content"> <img src="free-photo-of-park-narodowy-teide-teneryfa.jpeg" alt="Avatar"
+                        class="avatar-post">
+
+                    <h2 class="post-title">PRZYKŁADOWY NAGŁÓWEK 1</h2>
+                    <p class="post-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A nemo fugiat natus
+                        ad impedit sapiente architecto necessitatibus, deleniti vel ducimus explicabo voluptates nobis
+                        illo incidunt reiciendis, ipsa iste adipisci rem ullam distinctio. Illum nemo, eaque sequi est
+                        id nostrum ipsum illo harum vel soluta, a ad, laborum fugiat? Voluptate, incidunt!Lorem ipsum
+                        dolor sit, amet consectetur adipisicing elit. Quisquam illum provident ea rem sit impedit neque,
+                        commodi perspiciatis laudantium! Esse, tempora. Nemo itaque cum inventore eius maiores
+                        architecto pariatur et?Lorem ipsum dolor sit amet consectetur adipiscing elit. Aperiam, ipsum...
+                    </p>
+                </div>
+            </div>
+            <div class="reservation-form-container">
+                <div class="image-section">
+                    <div class="form-cut"></div>
+                    <div class="form-section">
+                        <h2>TESTOWY WPIS</h2>
+                        <form action="submit_form.php" method="post">
+                            <input type="text" name="full_name" placeholder="Full name" required>
+                            <input type="email" name="email" placeholder="Email address" required>
+                            <div class="radio-group">
+                                <input type="radio" name="group_size" value="small" id="small-group" required>
+                                <label for="small-group">Małe grupy turystyczne</label>
+
+                                <input type="radio" name="group_size" value="large" id="large-group" required>
+                                <label for="large-group">Duże grupy turystyczne</label>
+                            </div>
+                            <button type="submit" class="submit-btn">NASTĘPNY KROK</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <img src="ajde_rob_1.png" alt="Avatar" class="avatar-post"> Joanna Wójcicka
+            <div>Full Stack Developer</div>
+            <div>+48 123 456 789</div>
+            <div class="social-icons">
+                <a href="#">FB</a>
+                <a href="#">TW</a>
+                <a href="#">IG</a>
+            </div>
+        </div>
+        <div class="ads">Ads</div>
+        <div class="footer">Footer</div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Zadanie 7</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #166ee2;
+            height: 700px;
+            align-items: center;
+        }
+
+        .side-bar {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-picture {
+            display: block;
+            align-self: center;
+            position: relative;
+            border-radius: 20px;
+
+            width: 700px;
+            height: 700px;
+            z-index: 0;
+        }
+
+        .profile-picture {
+            width: 200px;
+            display: block;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            z-index: 2;
+        }
+
+        .side-icon {
+            width: 200px;
+            display: block;
+            position: relative;
+            border-radius: 30px;
+            margin-bottom: 10px;
+        }
+
+        .social-buttons {
+            display: flex;
+            align-self: flex-end;
+            justify-self: flex-end;
+            gap: 10px;
+            position: absolute;
+            top: 600px;
+            left: 45%;
+            margin-bottom: 20px;
+        }
+
+        .social-buttons>img:nth-child(1) {
+            height: 50px;
+            width: 50px;
+            background-color: aliceblue;
+            padding: 10px;
+            border-radius: 25px;
+        }
+
+        .social-buttons>img:nth-child(2) {
+            height: 50px;
+            width: 50px;
+            background-color: aliceblue;
+            padding: 10px;
+            border-radius: 25px;
+        }
+
+        .social-buttons>img:nth-child(3) {
+            height: 50px;
+            width: 50px;
+            background-color: rgb(247, 80, 80);
+            padding: 10px;
+            border-radius: 25px;
+        }
+
+        .side-bar-buttons {
+            display: flex;
+            position: absolute;
+            background-color: aliceblue;
+            padding: 10px;
+            border-radius: 25px;
+            flex-direction: column;
+            top: 400px;
+            left: 50px;
+            z-index: 2;
+        }
+
+        .dot {
+            margin: 15px;
+            height: 10px;
+            width: 10px;
+            border-radius: 10px;
+            background-color: #166ee2;
+        }
+
+        .content {
+            height: 5000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="side-bar">
+            <img class="profile-picture" src="img/Screenshot 2023-10-29 153157.png" alt="Profile">
+            <div class="side-bar-buttons">
+                <img src="img/mic-off.svg">
+                <img src="img/video-off.svg">
+                <img src="img/phone-missed.svg">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+        <div class="main-content">
+            <img class="main-picture" src="img/Screenshot 2023-10-29 153118.png" alt="Main">
+            <div class="social-buttons">
+                <img src="img/mic.svg">
+                <img src="img/video.svg">
+                <img src="img/phone-missed.svg">
+            </div>
+        </div>
+    </div>
+    <div class="content"></div>
+
+
+</body>
+
+</html>

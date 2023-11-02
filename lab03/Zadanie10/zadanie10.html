@@ -1,0 +1,180 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Zadanie 10</title>
+    <style>
+        body {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            background-color: yellow;
+        }
+
+        .menu {
+            margin-top: 100px;
+            width: 250px;
+            padding: 0px;
+            border-radius: 30px;
+
+        }
+
+        .menu-item {
+            position: relative;
+        }
+
+        .menu-item input[type="checkbox"] {
+            display: none;
+
+        }
+
+        .menu-item label {
+            display: block;
+            background-color: #ff3399;
+            padding: 10px;
+            height: 50px;
+            cursor: pointer;
+            color: white;
+            font-size: large;
+            position: relative;
+        }
+
+        .menu-item:not(:last-child) label:after {
+            content: '';
+            position: absolute;
+            right: 10px;
+            top: 75px;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #ff3399;
+            z-index: 4;
+        }
+
+        .menu-item label:after:nth-child(4) {
+            content: '';
+            border-top: 10px solid yellow;
+        }
+
+
+        .menu-item .submenu>div {
+            height: 0;
+            overflow: hidden;
+            transition: height 0.5s;
+            padding-left: 10px;
+            background-color: #1E90FF;
+            cursor: pointer;
+            color: white;
+            font-size: large;
+            position: relative;
+        }
+
+        .menu-item input[type="radio"] {
+            display: none;
+        }
+
+
+
+        .menu-item input[type="radio"]:checked~.submenu>div {
+            height: 50px;
+            padding: 10px;
+        }
+
+
+        .submenu div:hover {
+            background: #2A3D6F;
+            background: -moz-linear-gradient(top, #2A3D6F 0%, #2A3D6F 45%, #4e6ec7 55%, #4e6ec7 100%);
+            background: -webkit-linear-gradient(top, #2A3D6F 0%, #2A3D6F 45%,#4e6ec7 55%, #4f74da 100%);
+            background: linear-gradient(to bottom, #2A3D6F 0%, #2A3D6F 45%,#4e6ec7 55%, #5d7dd4 100%);
+            transition: all 0.3s;
+            border-bottom: 1px solid #1D2C57;
+            z-index: 4;
+        }
+
+
+        .submenu div:hover:before {
+            content: '';
+            position: absolute;
+            height: 0;
+            width: 6px;
+            right: 0px;
+            top: 0;
+            opacity: 1;
+            border-top: 35px solid transparent;
+            border-right: 10px solid yellow;
+            border-bottom: 35px solid transparent;
+        }
+
+        .submenu div:hover:after {
+            content: '';
+            position: absolute;
+            height: 0;
+            width: 5px;
+            left: 0;
+            top: 0;
+            opacity: 1;
+            border-top: 35px solid transparent;
+            border-left: 10px solid yellow;
+            border-bottom: 35px solid transparent;
+        }
+
+        .menu-item:first-child label {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .menu-item:last-child label {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <div class="menu-item">
+            <input type="radio" name="menu" id="position1">
+            <label for="position1">Pozycja1</label>
+            <div class="submenu">
+                <div>item 1</div>
+                <div>item 2</div>
+                <div>item 3</div>
+                <div>item 4</div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <input type="radio" name="menu" id="position2">
+            <label for="position2">Pozycja2</label>
+            <div class="submenu">
+                <div>item 1</div>
+                <div>item 2</div>
+                <div>item 3</div>
+                <div>item 4</div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <input type="radio" name="menu" id="position3">
+            <label for="position3">Pozycja3</label>
+            <div class="submenu">
+                <div>item 1</div>
+                <div>item 2</div>
+                <div>item 3</div>
+                <div>item 4</div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <input type="radio" name="menu" id="position4">
+            <label for="position4">Koniec</label>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

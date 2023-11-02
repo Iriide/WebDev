@@ -1,0 +1,183 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Zadanie 5</title>
+    <style>
+        body {
+            background-image: url("bg.jpg");
+            background-repeat: no-repeat, repeat;
+            font-family: Arial, Helvetica, sans-serif;
+            background-size: cover;
+            background-color: #cccccc;
+        }
+
+        .content {
+            background-color: #6fd1f8;
+            opacity: 0.4;
+            height: 100%;
+            width: 100%;
+            top: 0px;
+            left: 0px;
+            position: absolute;
+            border: 20px solid #6fd1f8;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #6fd1f8;
+            color: aliceblue;
+            padding: 10px;
+        }
+
+        .navbar a,
+        .navbar span {
+            margin: 0 10px;
+            text-decoration: none;
+            color: rgb(243, 248, 255);
+            position: relative;
+        }
+
+        .dropdown,
+        .nested-dropdown {
+            position: relative;
+            display: inline-block;
+
+        }
+
+        .dropdown-content,
+        .nested-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            width: 150px;
+            border-radius: 10px;
+            z-index: 1;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+
+        .dropdown-content a,
+        .nested-dropdown-content a {
+            color: black;
+            padding-top: 10px;
+            width: 140px;
+            padding-bottom: 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .nested-dropdown:hover .nested-dropdown-content {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nested-dropdown-content {
+            left: 100%;
+            top: 0;
+        }
+
+        .dropdown-content>a:hover,
+        .nested-dropdown-content>a:hover {
+            background-color: #6fd1f8;
+            color: #ffffff;
+        }
+
+        .buttons>a:nth-child(1) {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #ffffff;
+            background-color: #6fd1f8;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        .buttons>a:nth-child(2) {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #6fd1f8;
+            background-color: #ffffff;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+        .buttons>a:nth-child(2):hover {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #ffffff;
+            background-color: #6fd1f8;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        .buttons>a:nth-child(1):hover {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #6fd1f8;
+            background-color: #ffffff;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="content"></div>
+    <div class="navbar">
+        <span>BRANDNAME</span>
+        <div class="menu">
+            <a href="#">Home</a>
+            <div class="dropdown">
+                <a href="#">Menu ▼</a>
+                <div class="dropdown-content">
+                    <a href="#">Link1</a>
+                    <a href="#">Link2</a>
+                    <a href="#">Link3</a>
+                    <div class="nested-dropdown">
+                        <a href="#">Link4 ►</a>
+                        <div class="nested-dropdown-content">
+                            <a href="#">Link1</a>
+                            <a href="#">Link2</a>
+                            <a href="#">Link3</a>
+                            <a href="#">More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#">Services ▼</a>
+                <div class="dropdown-content">
+                    <a href="#">Link1</a>
+                    <a href="#">Link2</a>
+                    <a href="#">Link3</a>
+                    <div class="nested-dropdown">
+                        <a href="#">Link4 ►</a>
+                        <div class="nested-dropdown-content">
+                            <a href="#">Link1</a>
+                            <a href="#">Link2</a>
+                            <a href="#">Link3</a>
+                            <a href="#">More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#">About</a>
+        </div>
+        <div class="buttons">
+            <a href="#">LOG IN</a>
+            <a href="#">SIGN UP</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

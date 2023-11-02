@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 3</title>
+    <link rel="stylesheet" href="style2.css">
+
+    <style>
+        .box {
+            margin: auto;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-gap: auto;
+        }
+
+        .city-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 5px;
+        }
+
+        .city-card>h2{
+            padding-left: 4px;
+        }
+
+        .city-card>p{
+            padding-left: 4px;
+        }
+
+        .city-card>h3{
+            padding-left: 4px;
+            color: #f75d5d;
+
+        }
+        img {
+            width: 100%;
+            height: 40%;
+        }
+
+        .comments-likes {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .custom-button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #f75d5d;
+            border: 5px solid #f75d5d;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .custom-button:hover {
+            background-color: #e25c5c;
+            border: 5px solid #f75d5d;
+        }
+
+        @media (max-width: 1450px) {
+            .box {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                grid-gap: 20px;
+            }
+        }
+
+        @media (max-width: 940px) {
+            .box {
+                display: grid;
+                grid-template-columns: auto auto auto;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .box {
+                display: grid;
+                grid-template-columns: auto auto;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .box {
+                display: grid;
+                grid-template-columns: auto;
+            }
+        }
+
+        @media (min-width: 2000px) {
+            .box {
+                display: grid;
+                grid-template-columns: auto auto auto auto auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="box">
+        <div class="city-card">
+            <picture>
+                <source media="(min-width: 601px) and (max-width: 800px)" srcset="img/berlin_medium.jpeg" />
+                <source media="(min-width: 801px)" srcset="img/berlin_big.jpeg" />
+                <source media="(max-width: 600px)" srcset="img/berlin_small.jpeg" />
+                <img src="img/berlin_big.jpeg" />
+            </picture>
+            <h2>Nazwa Miasta</h2>
+            <h3>Opis 1</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum asperiores ab rem voluptatem quos dolor quae saepe provident adipisci optio.</p>
+            <a href="#" class="custom-button">Czytaj artykuł</a>
+            <div class="comments-likes">
+                <span>🗨 16 komentarzy</span>
+                <span>❤ 322 polubienia</span>
+            </div>
+        </div>
+        <div class="city-card">
+            <picture>
+                <source media="(min-width: 601px) and (max-width: 800px)" srcset="img/chicago_medium.jpeg" />
+                <source media="(min-width: 801px)" srcset="img/chicago_big.jpeg" />
+                <source media="(max-width: 600px)" srcset="img/chicago_small.jpeg" />
+                <img src="img/chicago_big.jpeg" />
+            </picture>
+            <h2>Nazwa Miasta</h2>
+            <h3>Opis 1</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum asperiores ab rem voluptatem quos dolor quae saepe provident adipisci optio.</p>
+            <a href="#" class="custom-button">Czytaj artykuł</a>
+            <div class="comments-likes">
+                <span>🗨 16 komentarzy</span>
+                <span>❤ 322 polubienia</span>
+            </div>
+        </div>
+        <div class="city-card">
+            <picture>
+                <source media="(min-width: 601px) and (max-width: 800px)" srcset="img/cracow_medium.jpeg" />
+                <source media="(min-width: 801px)" srcset="img/cracow_big.jpeg" />
+                <source media="(max-width: 600px)" srcset="img/cracow_small.jpeg" />
+                <img src="cracow_big.jpeg" />
+            </picture>
+            <h2>Nazwa Miasta</h2>
+            <h3>Opis 1</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum asperiores ab rem voluptatem quos dolor quae saepe provident adipisci optio.</p>
+            <a href="#" class="custom-button">Czytaj artykuł</a>
+            <div class="comments-likes">
+                <span>🗨 16 komentarzy</span>
+                <span>❤ 322 polubienia</span>
+            </div>
+        </div>
+        <div class="city-card">
+            <picture>
+                <source media="(min-width: 601px) and (max-width: 800px)" srcset="img/sydney_medium.jpeg" />
+                <source media="(min-width: 801px)" srcset="img/sydney_big.jpeg" />
+                <source media="(max-width: 600px)" srcset="img/sydney_small.jpeg" />
+                <img src="img/sydney_big.jpeg" />
+            </picture>
+            <h2>Nazwa Miasta</h2>
+            <h3>Opis 1</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum asperiores ab rem voluptatem quos dolor quae saepe provident adipisci optio.</p>
+            <a href="#" class="custom-button">Czytaj artykuł</a>
+            <div class="comments-likes">
+                <span>🗨 16 komentarzy</span>
+                <span>❤ 322 polubienia</span>
+            </div>
+        </div>
+        <div class="city-card">
+            <picture>
+                <source media="(min-width: 601px) and (max-width: 800px)" srcset="img/warsaw_medium.jpeg" />
+                <source media="(min-width: 801px)" srcset="img/warsaw_big.jpeg" />
+                <source media="(max-width: 600px)" srcset="img/warsaw_small.jpeg" />
+                <img src="img/warsaw_big.jpeg" />
+            </picture>
+            <h2>Nazwa Miasta</h2>
+            <h3>Opis 1</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum asperiores ab rem voluptatem quos dolor quae saepe provident adipisci optio.</p>
+            <a href="#" class="custom-button">Czytaj artykuł</a>
+            <div class="comments-likes">
+                <span>🗨 16 komentarzy</span>
+                <span>❤ 322 polubienia</span>
+            </div>
+        </div>
+        <div class="city-card">
+            <picture>
+                <source media="(min-width: 601px) and (max-width: 800px)" srcset="img/berlin_medium.jpeg" />
+                <source media="(min-width: 801px)" srcset="img/berlin_big.jpeg" />
+                <source media="(max-width: 600px)" srcset="img/berlin_small.jpeg" />
+                <img src="img/berlin_big.jpeg" />
+            </picture>
+            <h2>Nazwa Miasta</h2>
+            <h3>Opis 1</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum asperiores ab rem voluptatem quos dolor quae saepe provident adipisci optio.</p>
+            <a href="#" class="custom-button">Czytaj artykuł</a>
+            <div class="comments-likes">
+                <span>🗨 16 komentarzy</span>
+                <span>❤ 322 polubienia</span>
+            </div>
+        </div>
+        <div class="city-card">
+            <picture>
+                <source media="(min-width: 601px) and (max-width: 800px)" srcset="img/chicago_medium.jpeg" />
+                <source media="(min-width: 801px)" srcset="img/chicago_big.jpeg" />
+                <source media="(max-width: 600px)" srcset="img/chicago_small.jpeg" />
+                <img src="img/chicago_big.jpeg" />
+            </picture>
+            <h2>Nazwa Miasta</h2>
+            <h3>Opis 1</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum asperiores ab rem voluptatem quos dolor quae saepe provident adipisci optio.</p>
+            <a href="#" class="custom-button">Czytaj artykuł</a>
+            <div class="comments-likes">
+                <span>🗨 16 komentarzy</span>
+                <span>❤ 322 polubienia</span>
+            </div>
+        </div>
+        <div class="city-card">
+            <picture>
+                <source media="(min-width: 601px) and (max-width: 800px)" srcset="img/cracow_medium.jpeg" />
+                <source media="(min-width: 801px)" srcset="img/cracow_big.jpeg" />
+                <source media="(max-width: 600px)" srcset="img/cracow_small.jpeg" />
+                <img src="cracow_big.jpeg" />
+            </picture>
+            <h2>Nazwa Miasta</h2>
+            <h3>Opis 1</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum asperiores ab rem voluptatem quos dolor quae saepe provident adipisci optio.</p>
+            <a href="#" class="custom-button">Czytaj artykuł</a>
+            <div class="comments-likes">
+                <span>🗨 16 komentarzy</span>
+                <span>❤ 322 polubienia</span>
+            </div>
+        </div>
+        <div class="city-card">
+            <picture>
+                <source media="(min-width: 601px) and (max-width: 800px)" srcset="img/sydney_medium.jpeg" />
+                <source media="(min-width: 801px)" srcset="img/sydney_big.jpeg" />
+                <source media="(max-width: 600px)" srcset="img/sydney_small.jpeg" />
+                <img src="img/sydney_big.jpeg" />
+            </picture>
+            <h2>Nazwa Miasta</h2>
+            <h3>Opis 1</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum asperiores ab rem voluptatem quos dolor quae saepe provident adipisci optio.</p>
+            <a href="#" class="custom-button">Czytaj artykuł</a>
+            <div class="comments-likes">
+                <span>🗨 16 komentarzy</span>
+                <span>❤ 322 polubienia</span>
+            </div>
+        </div>
+        <div class="city-card">
+            <picture>
+                <source media="(min-width: 601px) and (max-width: 800px)" srcset="img/warsaw_medium.jpeg" />
+                <source media="(min-width: 801px)" srcset="img/warsaw_big.jpeg" />
+                <source media="(max-width: 600px)" srcset="img/warsaw_small.jpeg" />
+                <img src="img/warsaw_big.jpeg" />
+            </picture>
+            <h2>Nazwa Miasta</h2>
+            <h3>Opis 1</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum asperiores ab rem voluptatem quos dolor quae saepe provident adipisci optio.</p>
+            <a href="#" class="custom-button">Czytaj artykuł</a>
+            <div class="comments-likes">
+                <span>🗨 16 komentarzy</span>
+                <span>❤ 322 polubienia</span>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+
+</html>

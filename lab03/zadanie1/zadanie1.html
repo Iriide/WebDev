@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Alignment: aligning individual items on the cross axis</title>
+    <link rel="stylesheet" href="style2.css">
+
+    <style>
+        .box {
+            background-color: rgb(187, 185, 185);
+            border: 2px solid black;
+            padding: 7px;
+            height: auto;
+        }
+
+        .container {
+            background-color: black;
+            padding: 3px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            height: 50px;
+            background-color: #858585;
+            padding: 30px;
+        }
+
+        .logo {
+            height: 40px;
+            width: 100px;
+            padding: 5px;
+            display: flex;
+            justify-self: flex-start;
+            align-self: flex-start;
+            align-items: flex-end;
+            background-color: #ffffff;
+            border: 2px solid black;
+            visibility: visible;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 25% 50% 25%;
+            grid-template-rows: 200px;
+            background-color: #ffffff;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+        }
+
+        .nav {
+            background-color: #d3d2d2;
+            outline: 2px solid black;
+            padding-left: 5px;
+            height: 50px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: left;
+        }
+
+        .nav:hover {
+            background-color: #858585;
+        }
+
+        .left-column {
+            background-color: #ffffff;        
+            outline: 2px solid black;
+            grid-column: 1;
+            height: auto;
+            display: flex;
+            justify-content: center;
+        }
+        .right-column{
+            background-color: #ffffff;
+            outline: 2px solid black;
+            grid-column: 3;
+            height: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .filler {
+            background-color: #ffffff;
+            outline: 2px solid black;
+            height: auto;
+            grid-column: 2;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-self: flex-end;
+            background-color: #858585;
+            border-top: 2px solid black;
+            height: 50px;
+        }
+
+        @media (max-width: 900px){
+            .grid-container{
+                grid-template-columns: 25% 75%;
+                grid-template-rows: 200px 100px;
+            }
+            .right-column{
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row: 2;
+            }
+            .left-column{
+                grid-column: 1;
+                grid-row: 1;
+            }
+            .filler{
+                grid-column: 2;
+                grid-row: 1;
+            }
+        }
+        @media (max-width: 700px){
+            .grid-container{
+                grid-template-columns: 100%;
+                grid-template-rows: 100px 200px 100px;
+            }
+            .right-column{
+                grid-column: 1;
+                grid-row: 3;
+            }
+            .left-column{
+                grid-column: 1;
+                grid-row: 1;
+            }
+            .filler{
+                grid-column: 1;
+                grid-row: 2;
+            }
+            .logo{
+                visibility: hidden;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box">
+        <div class="container">
+            <div class="header">
+                <div class="logo">LOGO</div>
+                <div>TOP STRONY</div>
+                <div></div>
+            </div>
+            <div class="nav">menu</div>
+            <div class="grid-container">
+                <div class="left-column">LEWA KOLUMNA</div>
+                <div class="filler">ZAWARTOŚĆ STRONY</div>
+                <div class="right-column">PRAWA KOLUMNA</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div>STOPKA</div>
+    </div>
+    </div>
+    </div>
+
+</body>
+
+
+</html>
