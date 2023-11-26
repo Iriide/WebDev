@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 1</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .area1{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-content: center;
+            background-color: aqua;
+            padding: 100px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+        }
+        .area2{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: rgb(251, 255, 0);
+            padding: 100px;
+            width: 200px;
+            border-radius: 50%;
+            height: 200px;    
+        }
+        .area3{
+            background-color: rgb(94, 255, 0);
+            width: 200px;
+            border-radius: 50%;
+            height: 200px;           
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="area1" id="area1">
+        <div class="area2" id="area2">
+            <div class="area3" id="area3">
+            </div>
+        </div>
+    </div>
+    <button id="Button1">Stop/StartPropagation</button>
+    <button id="Button2">Reset</button>
+    <button id="Button3">Zmiana kolejności</button>
+    <script src="script.js"></script>
+
+    <ul id="log"></ul>
+</body>
+
+</html>

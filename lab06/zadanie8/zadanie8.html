@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Country Data</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .country-table{
+            width: 100%;
+        }
+        .collapsed {
+            display: none;
+        }
+
+        .collapsible {
+            background-color: #f9f9f9;
+            cursor: pointer;
+            padding: 5px 10px;
+            border: none;
+            text-align: left;
+        }
+        td{
+            padding: 0px 20px;
+        }
+        tr{
+            width: 100%;
+        }
+
+        .collapsible:hover {
+            background-color: #e0e0e0;
+        }
+
+        .collapsible:after {
+            content: '';
+            float: right;
+        }
+
+        .collapsible.expanded:after {
+            content: "";
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <table class="country-table" id="country-table">
+        <thead>
+            <tr>
+                <td><button id="sortByName">Name</button></td>
+                <td><button id="sortByCapital">Capital</button></td>
+                <td><button id="sortByPopulation">Population</button></td>
+                <td><button id="sortByArea">Area</button></td>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

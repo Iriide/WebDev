@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria Zdjęć</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gallery {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: center;
+            gap: 8px;
+        }
+
+        .gallery-img {
+            max-width: 500px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 60%;
+            max-width: 700px;
+        }
+
+        .close,
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.6s ease;
+        }
+
+        .close {
+            right: 25px;
+            top: 25px;
+            font-size: 60px;
+        }
+
+        .prev {
+            left: 25px;
+        }
+
+        .next {
+            right: 25px;
+        }
+
+        .close:hover,
+        .close:focus,
+        .prev:hover,
+        .next:hover {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="gallery">
+        <img class="gallery-img" src="berlin_medium.jpeg" alt="Image 1">
+        <img class="gallery-img" src="sydney_medium.jpeg" alt="Image 2">
+        <img class="gallery-img" src="warsaw_medium.jpeg" alt="Image 2">
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <span class="prev">&#10094;</span>
+        <img class="modal-content" id="img01">
+        <span class="next">&#10095;</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

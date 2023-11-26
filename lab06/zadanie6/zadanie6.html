@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .password-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        img{
+            height: 15px;
+            width: 15px;
+        }
+
+        .eye-toggle {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 15px;
+            width: 20px;
+            cursor: pointer;
+        }
+
+        #passwordRequirements {
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        #passwordRequirements p {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        #passwordRequirements ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #passwordRequirements li {
+            margin-bottom: 5px;
+            color: #888;
+        }
+        #passwordMatchMessage {
+            margin-top: 10px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="password-container">
+        <label for="newPassword">New password</label>
+        <div class="input-group">
+            <input type="password" id="newPassword" placeholder="New password">
+            <img src="eye_not_visible.png" class="eye-toggle" onclick="toggleVisibility('newPassword', this)">
+        </div>
+
+        <label for="repeatPassword">Repeat new password</label>
+        <div class="input-group">
+            <input type="password" id="repeatPassword" placeholder="Repeat new password">
+            <img src="eye_not_visible.png" class="eye-toggle" onclick="toggleVisibility('repeatPassword', this)">
+        </div>
+
+        <div id="passwordRequirements">
+            <p>Password requirements</p>
+            <ul>
+                <li id="req-length"><img src="wrong.png" id="img-length"> at least 8 characters</li>
+                <li id="req-special"><img src="wrong.png" id="img-special"> at least one special character</li>
+                <li id="req-uppercase"><img src="wrong.png" id="img-uppercase"> at least one capital letter</li>
+                <li id="req-digit"><img src="wrong.png" id="img-digit"> at least one digit</li>
+            </ul>
+        </div>
+        <div id="passwordMatchMessage"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
